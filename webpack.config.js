@@ -80,9 +80,20 @@ module.exports = {
         use: jsLoaders(),
       },
       {
-        test: /\.(ttf|eot|woff|svg|woff2)$/,
+        test: /\.ttf$/,
         use: {
           loader: 'file-loader',
+        },
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            context: path.resolve(__dirname, 'src/'),
+            outputPath: 'dist/',
+          },
         },
       },
     ],
