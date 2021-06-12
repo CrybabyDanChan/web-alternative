@@ -1,10 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
 
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
@@ -51,14 +50,14 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
-    // new CopyPlugin({
-    //     patterns: [
-    //         {
-    //             from: path.resolve(__dirname, 'src/favicon.ico'),
-    //             to: path.resolve(__dirname, 'dist/assets'),
-    //         },b
-    //     ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/fonts'),
+          to: path.resolve(__dirname, 'dist/fonts'),
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
@@ -79,6 +78,12 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: jsLoaders(),
+      },
+      {
+        test: /\.(ttf|eot|woff|svg|woff2)$/,
+        use: {
+          loader: 'file-loader',
+        },
       },
     ],
   },
