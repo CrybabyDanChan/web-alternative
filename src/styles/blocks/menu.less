@@ -1,9 +1,45 @@
 .menu {
-  flex: 1;
-  display: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: @mine-shaft;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  #flex-center();
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &__toggle::after,
+  &__toggle::before {
+    content: '';
+    width: 17.5px;
+    height: 1.25px;
+    background: @white;
+    position: absolute;
+    transform: translateY(-50%);
+    border-radius: 1px;
+  }
+
+  &__toggle {
+    position: relative;
+    width: 17.5px;
+    height: 1.25px;
+    background: @white;
+    border-radius: 1px;
+
+    &::after {
+      top: calc(50% + 4px)
+    }
+
+    &::before {
+      top: calc(50% - 4px)
+    }
+  }
 
   &__list {
-    display: flex;
+    display: none;
+    //display: flex;
     justify-content: space-between;
     align-items: center;
   }
