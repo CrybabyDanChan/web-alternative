@@ -14,7 +14,7 @@
     box-shadow: none;
     background: none;
     height: 100%;
-    width: 100%;
+    width: auto;
     border-radius: 0;
   });
 
@@ -99,6 +99,8 @@
       height: 100%;
       #flex-space-between();
       flex-direction: row;
+      .adaptive-size(30, 15);
+      column-gap: @size;
       padding: 0;
     });
   }
@@ -110,5 +112,10 @@
     font-size: 14px;
     line-height: 17px;
     color: @white;
+
+    #for-size(@sm, {
+      .adaptive-size(14, 5);
+      font-size: @size;
+    });
   }
 }
