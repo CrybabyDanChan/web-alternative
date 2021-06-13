@@ -1,0 +1,19 @@
+#flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#for-size(@point, @rules) {
+  @actualPoint : @point + 1;
+
+  @media screen and (min-width: ~'@{actualPoint}px') {
+    @rules();
+  }
+}
