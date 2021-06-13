@@ -11,14 +11,21 @@
     <section class="web-alternative">
         <header class="header">
             <div class="header__toolbar">
+                <a class="logotype" href="/">
+                    <img
+                        src="assets/images/logo.png"
+                        alt="logo"
+                        class="image"
+                    >
+                    <span class="logotype__text">
+                        WEB ALTERNATIVE
+                    </span>
+                </a>
                 <div class="header__order-call">
-                    <a class="logotype" href="/">
-                        <img
-                            src="assets/images/logo.png"
-                            alt="logo"
-                            class="image"
-                        >
-                    </a>
+                    <button class="button button_secondary" type="button">
+                        Заказать звонок
+                    </button>
+                    <a href="tel:+74212253085" class="header__phone">+7 (4212) 25-30-85</a>
                 </div>
                 <div class="menu">
                     <div class="menu__toggle">
@@ -37,7 +44,10 @@
             <div class="header__content">
                 <div class="header__content-heading">
                     <div class="header__ecommerce">
-                        <img src="assets/images/shopping-cart.png" alt="shopping-cart">
+                        <picture class="header__picture">
+                            <source media="(min-width: 577px)" srcset="assets/images/shopping-cart.png">
+                            <img src="assets/images/shopping-mobile-cart.png" alt="shopping-cart">
+                        </picture>
                         E-commerce
                     </div>
                     <h1 class="header__title">
@@ -48,7 +58,14 @@
                     </div>
                 </div>
                 <div class="header__mobile">
-                    <img src="assets/images/mobile.png" alt="mobile" class="image">
+                    <picture class="header__picture">
+                        <source media="(min-width: 577px)" srcset="assets/images/header-phone.png">
+                        <img
+                            src="assets/images/header-mobile-phone.png"
+                            alt="mobile"
+                            class="image"
+                        >
+                    </picture>
                 </div>
                 <div class="header__call-back">
                     <button class="button">
