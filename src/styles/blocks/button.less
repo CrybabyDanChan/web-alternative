@@ -1,0 +1,30 @@
+.button {
+  width: 280px;
+  height: 50px;
+  background: @button-primary-color;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: @white;
+  #flex-space-between();
+  border: none;
+  box-shadow: 0 4px 4px @button-box-shadow-color;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__children {
+    #flex-center();
+    padding-left: 15px;
+  }
+
+  &__link {
+    width: 50px;
+    height: 50px;
+    background: @button-secondary-color;
+    #flex-center();
+  }
+}

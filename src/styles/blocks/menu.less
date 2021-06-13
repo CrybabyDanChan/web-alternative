@@ -1,4 +1,5 @@
-@toolbar-padding: 45px;
+@toolbar-horizontal-padding: 45px;
+@toolbar-vertical-padding: 10px;
 
 .menu {
   width: 35px;
@@ -27,7 +28,7 @@
     }
 
     .menu__list {
-      left: calc(-100vw + @toolbar-padding);
+      left: calc(-100vw + @toolbar-horizontal-padding);
     }
   }
 
@@ -66,16 +67,26 @@
 
   &__list {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh + @toolbar-horizontal-padding);
     display: flex;
+    row-gap: 15px;
+    padding: 100px 20px;
     position: absolute;
-    top: 0;
+    top: -@toolbar-horizontal-padding;
     left: 100vw;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     background: @menu-background-color;
     transition: 1s left;
     z-index: -1;
+  }
+
+  &__link {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: @white;
   }
 }
