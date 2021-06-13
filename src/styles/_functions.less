@@ -1,0 +1,5 @@
+.adaptive-size(@maxSize, @minSize) {
+  @addSize: @maxSize - @minSize;
+  @maxWidth: @xxxl - @s;
+  @size: calc(~'@{minSize}px'+ @addSize * ((100vw - 320px) / @maxWidth));
+};

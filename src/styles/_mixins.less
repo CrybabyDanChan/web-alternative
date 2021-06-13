@@ -9,3 +9,11 @@
   justify-content: center;
   align-items: center;
 }
+
+#for-size(@point, @rules) {
+  @actualPoint : @point + 1;
+
+  @media screen and (min-width: ~'@{actualPoint}px') {
+    @rules();
+  }
+}
