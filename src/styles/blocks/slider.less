@@ -3,6 +3,10 @@
   overflow: hidden;
   padding-bottom: 8px;
 
+  #for-size(@lg, {
+    overflow: visible;
+  });
+
   &__track {
     height: 100%;
     display: flex;
@@ -32,7 +36,10 @@
     #flex-center();
 
     &_active {
-      border: 1px solid red;
+      .slider__numeric {
+        opacity: 1;
+        color: @orange;
+      }
     }
 
     #for-size(@lg, {
@@ -53,12 +60,13 @@
       border-radius: 50%;
       background: @white;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: -1;
+      z-index: 1;
     }
 
     .image {
       width: 140px;
       height: 100px;
+      z-index: 1;
     }
   }
 
@@ -95,5 +103,23 @@
       bottom: 25%;
       transform: rotate(45deg);
     }
+  }
+
+  &__numeric {
+    display: none;
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-stretch: expanded;
+    font-size: 120px;
+    color: @white;
+    opacity: 10%;
+    z-index: 0;
+
+    #for-size(@lg, {
+      display: block;
+    });
   }
 }

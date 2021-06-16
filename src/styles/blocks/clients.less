@@ -5,6 +5,10 @@
     background: url("../../assets/images/clients-background.png") center center / cover border-box no-repeat;
   });
 
+  //#for-size(@lg, {
+  //  padding: 100px 175px;
+  //});
+
   &__title {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -16,6 +20,7 @@
   }
 
   .slider {
-    margin-top: 49px;
+    .adaptive-size(154, 49);
+    margin-top: @size;
   }
 }
